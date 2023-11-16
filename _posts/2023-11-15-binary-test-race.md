@@ -4,7 +4,7 @@ layout: post
 hide: true
 title: Racing game - DEMO!
 description: The Racing Game!
-courses: { compsci: {week: 7 } }
+courses: { compsci: {week: 15 } }
 type: hacks
 ---
 
