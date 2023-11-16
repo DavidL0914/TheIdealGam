@@ -1,11 +1,6 @@
 # CSP course meta data
-Unit1:
-  title: Build a Lab Notebook
-  description:  Install Tools.  Design lab notebook.  Learn GitHub Pages. Work with Pair (pair name). 
-  start: 0
-  end: 3
-Unit2:
-  title: Learn Language
-  description: Learn (JavaScript|Python|Java).  Start Agile development process.
-  start: 4
-  end: 7
+Unit4:
+  title: Warm-up Project + CB Performance Task
+  description:  Create mini-project focused on frontend + binary, present tech talks based on CB concepts.
+  start: 13
+  end: 14
