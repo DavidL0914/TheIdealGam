@@ -1,21 +1,21 @@
 :root {
-    --primary-color: #4CAF50; // Green
-    --secondary-color: #2196F3; // Blue
-    --background-color: #F5F5F5; // Light gray
+    --primary-color: #FF6F61; // Coral
+    --secondary-color: #68C3A3; // Mint
+    --background-color: #FDFDFD; // Off-white
 }
 
-$high-emph: rgba(255, 255, 255, 0.87);
-$med-emph: rgba(255, 255, 255, 0.69);
-$low-emph: rgba(255, 255, 255, 0.5);
-$dark-grey: #333;
+$high-emph: rgba(0, 0, 0, 0.87);
+$med-emph: rgba(0, 0, 0, 0.69);
+$low-emph: rgba(0, 0, 0, 0.5);
+$light-grey: #F5F5F5;
 
 html, body, input, textarea, select, button {
     color: $high-emph;
-    background-color: $dark-grey;
+    background-color: $light-grey;
     transition: background-color 0.3s ease;
 
     &:hover {
-        background-color: darken($dark-grey, 10%);
+        background-color: lighten($light-grey, 5%);
     }
 }
 
@@ -29,21 +29,21 @@ a {
 }
 
 .site-title, .site-title:visited, .site-nav, .page-link {
-    color: var(--secondary-color);
+    color: var(--primary-color);
 }
 
 .site-nav {
-    background-color: lighten($dark-grey, 5%);
-    border-color: lighten($dark-grey, 15%);
+    background-color: lighten($light-grey, 8%);
+    border-color: lighten($light-grey, 15%);
 }
 
 * {
-    scrollbar-color: $dark-grey lighten($dark-grey, 15%);
+    scrollbar-color: $light-grey lighten($light-grey, 15%);
 }
 
 pre, code {
-    border-color: lighten($dark-grey, 15%);
-    background-color: lighten($dark-grey, 10%);
+    border-color: lighten($light-grey, 15%);
+    background-color: lighten($light-grey, 12%);
 }
 
 .page-description {
@@ -59,30 +59,30 @@ pre, code {
 }
 
 .btn {
-    background-color: $dark-grey;
-    color: $high-emph;
+    background-color: var(--primary-color);
+    color: $light-grey;
     border-color: var(--secondary-color);
 
     &:hover {
         background-color: var(--secondary-color);
-        color: $dark-grey;
+        color: $light-grey;
     }
 }
 
 table th {
-    background-color: lighten($dark-grey, 10%);
-    border-color: lighten($dark-grey, 15%);
+    background-color: lighten($light-grey, 12%);
+    border-color: lighten($light-grey, 15%);
     color: var(--secondary-color);
 }
 
 table td {
-    background-color: $dark-grey;
-    border-color: lighten($dark-grey, 15%);
+    background-color: $light-grey;
+    border-color: lighten($light-grey, 15%);
     color: $med-emph;
 }
 
 .flash {
-    color: $dark-grey;
+    color: $light-grey;
     filter: brightness(80%);
 }
 
@@ -91,9 +91,9 @@ canvas {
 }
 
 .post-list > li > div {
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    background-color: lighten($dark-grey, 5%);
-    border: 1px solid lighten($dark-grey, 15%);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: lighten($light-grey, 8%);
+    border: 1px solid lighten($light-grey, 15%);
 }
 
 li .post-meta-description {
@@ -101,7 +101,7 @@ li .post-meta-description {
 }
 
 .search-result-preview {
-    color: lightgray;
+    color: $med-emph;
 }
 
 .search-result-highlight {
