@@ -1,0 +1,114 @@
+:root {
+    --primary-color: #4CAF50; // Green
+    --secondary-color: #2196F3; // Blue
+    --background-color: #F5F5F5; // Light gray
+}
+
+$high-emph: rgba(255, 255, 255, 0.87);
+$med-emph: rgba(255, 255, 255, 0.69);
+$low-emph: rgba(255, 255, 255, 0.5);
+$dark-grey: #333;
+
+html, body, input, textarea, select, button {
+    color: $high-emph;
+    background-color: $dark-grey;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+        background-color: darken($dark-grey, 10%);
+    }
+}
+
+a {
+    color: var(--primary-color);
+    transition: color 0.3s ease;
+
+    &:hover {
+        color: darken(var(--primary-color), 10%);
+    }
+}
+
+.site-title, .site-title:visited, .site-nav, .page-link {
+    color: var(--secondary-color);
+}
+
+.site-nav {
+    background-color: lighten($dark-grey, 5%);
+    border-color: lighten($dark-grey, 15%);
+}
+
+* {
+    scrollbar-color: $dark-grey lighten($dark-grey, 15%);
+}
+
+pre, code {
+    border-color: lighten($dark-grey, 15%);
+    background-color: lighten($dark-grey, 10%);
+}
+
+.page-description {
+    color: $med-emph;
+}
+
+.post-meta {
+    color: $low-emph;
+}
+
+.post-content p, .post-content li {
+    color: $med-emph;
+}
+
+.btn {
+    background-color: $dark-grey;
+    color: $high-emph;
+    border-color: var(--secondary-color);
+
+    &:hover {
+        background-color: var(--secondary-color);
+        color: $dark-grey;
+    }
+}
+
+table th {
+    background-color: lighten($dark-grey, 10%);
+    border-color: lighten($dark-grey, 15%);
+    color: var(--secondary-color);
+}
+
+table td {
+    background-color: $dark-grey;
+    border-color: lighten($dark-grey, 15%);
+    color: $med-emph;
+}
+
+.flash {
+    color: $dark-grey;
+    filter: brightness(80%);
+}
+
+canvas {
+    filter: invert(20%);
+}
+
+.post-list > li > div {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    background-color: lighten($dark-grey, 5%);
+    border: 1px solid lighten($dark-grey, 15%);
+}
+
+li .post-meta-description {
+    color: $med-emph;
+}
+
+.search-result-preview {
+    color: lightgray;
+}
+
+.search-result-highlight {
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+.search-results-list-item .search-result-title {
+    color: var(--secondary-color);
+}
