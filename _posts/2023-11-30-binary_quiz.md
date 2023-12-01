@@ -1,4 +1,11 @@
-<!DOCTYPE html>
+---
+toc: false
+layout: post
+hide: true
+title: Binary Quiz
+courses: { compsci: {week: 14 } } 
+type: tangibles
+---
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -16,7 +23,6 @@
 
 <script>
     // Generate a random decimal number between 0 and 255
-    const correctDecimal = Math.floor(Math.random() * 256);
 
     // Function to convert decimal to binary with leading zeroes
     function decimalToBinary(decimal) {
@@ -25,11 +31,12 @@
     }
 
     // Convert the decimal number to binary
-    const correctBinary = decimalToBinary(correctDecimal);
 
     // Function to check the user's input
     function checkGuess() {
         // Get the user's input
+        const correctDecimal = Math.floor(Math.random() * 256);
+        const correctBinary = decimalToBinary(correctDecimal);
         const userDecimalGuess = parseInt(prompt(`Convert ${correctBinary} to decimal and enter the decimal value:`));
 
         // Check if the guess is correct
@@ -37,7 +44,8 @@
             alert('Congratulations! You guessed the correct decimal value.');
         } else {
             alert(`Sorry, the correct decimal value was ${correctDecimal}. Try again!`);
-        }
+        }m
+
     }
 </script>
 
