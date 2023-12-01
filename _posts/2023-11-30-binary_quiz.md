@@ -51,7 +51,6 @@ type: tangibles
 
 <h1>Binary Number Guessing Game</h1>
 <p>Convert the following binary number to decimal and enter the decimal value:</p>
-<p><strong>${correctBinary}</strong> is: <strong>${correctDecimal}</strong> (in decimal)</p>
 
 <!-- Button to trigger the guessing function -->
 <button onclick="checkGuess()">Guess Now</button>
