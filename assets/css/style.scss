@@ -22,6 +22,9 @@
     // Creates smooth animation effect
     transition: all 0.5s; 
   }
+  a, a:visited {
+    color: white
+  }
   .headbody {
     margin: 0;
     font-family: Arial, sans-serif;
