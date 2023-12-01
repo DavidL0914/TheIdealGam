@@ -2,7 +2,7 @@
 toc: False
 layout: default
 hide: True
-title: Binary Gam(e) | Binary Guesser
+title: Binary Gam(e) | Binary Puzzle
 courses: {'compsci': {'week': 14}}
 type: tangibles
 ---

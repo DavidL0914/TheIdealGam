@@ -22,6 +22,35 @@
     // Creates smooth animation effect
     transition: all 0.5s; 
   }
+  .headbody {
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+
+  header.site-header {
+    background-color: rgb(33, 87, 49);
+    color: #fff;
+    text-align: center;
+  }
+
+  nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+  }
+
+  nav li {
+    margin: 0 7px;
+  }
+
+  nav a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    font-size: 16px;
+  }
   /* define class for redifined button */
   .th {
     text-align: center;

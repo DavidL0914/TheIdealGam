@@ -5,7 +5,7 @@ hide: true
 title: 2 Player Racing Gam(e)
 description: Rules are under Binary Gam(e) | Racing Game in the Overview blog
 courses: { compsci: {week: 14 } } 
-type: hacks
+type: tangibles
 ---
 
 <html lang="en">
