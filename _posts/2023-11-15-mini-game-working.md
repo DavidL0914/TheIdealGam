@@ -4,11 +4,10 @@ layout: post
 hide: True
 title: Binary Word Game
 description: The Word Game!
-courses: {'compsci': {'week': 15}}
+courses: {'compsci': {'week': 14}}
 type: tangibles
 ---
 
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -23,8 +22,6 @@ type: tangibles
     </style>
 </head>
 <body>
-<h1>David Lee</h1>
-<p>AHAHA</p>
 
 <script>
 function getRandomWord() {
