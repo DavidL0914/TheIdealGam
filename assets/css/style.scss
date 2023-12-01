@@ -145,3 +145,17 @@
     background-color: #e70f0f;
   }
 
+  .game-link {
+    display: block;
+    margin: 10px auto;
+    padding: 1em 2em;
+    text-decoration: none;
+    font-size: 1.2em;
+    background-color: #4CAF50;
+    color: #fff;
+    border-radius: 5px;
+}
+
+.game-link:hover {
+    background-color: #45a049;
+}
