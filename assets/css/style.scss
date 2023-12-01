@@ -8,10 +8,10 @@
     width: auto;
     height: auto;
     border-radius: 10px;
-    background-color: #a87d7d;
+    background-color: #792626;
     border: 3px solid black;
     font-size: 1.5em;
-
+    color: white;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -22,17 +22,41 @@
     // Creates smooth animation effect
     transition: all 0.5s; 
   }
-
   /* define class for redifined button */
+  .th {
+    text-align: center;
+    vertical-align: middle;
+    color: white;
+    background-color: rgb(33, 87, 49);
+  }
+  td {
+    text-align: center;
+    vertical-align: middle;
+    color: white;
+    background-color: rgb(33, 87, 49);
+  }
+  input {
+    font-size: larger;
+    color: white;
+    background-color: rgb(46, 116, 67);
+  }
+  div {
+    color: white;
+    font-size: large
+  }
+  img {
+    width: 70px; /* Adjust the width as needed */
+    height: auto; /* Maintain aspect ratio */
+  }
   .button {
     @include button;
   }
   body {
-    background-color: #747474;
+    background-color: rgb(46, 116, 67);
   }
    /* darkens the background color on hover to create a selecting effect */
   .button:hover {
-    background-color: #373737;
+    background-color: #793c3c;
   }
 
   /* "row style" is flexible size and aligns pictures in center */
