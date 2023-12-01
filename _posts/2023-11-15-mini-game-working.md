@@ -50,7 +50,7 @@ function getRandomWord() {
       const playerGuess = prompt("Enter your binary word guess:");
   
       if (playerGuess !== binaryRepresentation) {
-        alert(`Incorrect guess. The correct binary representation is: ${binaryRepresentation}`);
+        alert(`Incorrect guess. For tester purposes the correct binary representation is: ${binaryRepresentation}`);
         attempts++;
         makeGuess();
       } else {
