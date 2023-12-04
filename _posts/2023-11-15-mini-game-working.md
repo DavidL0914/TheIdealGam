@@ -12,7 +12,7 @@ type: tangibles
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Binary Number Guessing Game</title>
+    <title>Binary Word Guessing Game</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -67,9 +67,13 @@ function getRandomWord() {
   
     makeGuess();
   } 
-playBinaryWordGuessingGame();
 </script>
 
+<h1>Binary Number Guessing Game</h1>
+<p>Convert the following word to binary and enter the binary value:</p>
+
+<!-- Button to trigger the guessing function -->
+<button onclick="playBinaryWordGuessingGame()">Guess Now</button>
 
 </body>
 </html>
