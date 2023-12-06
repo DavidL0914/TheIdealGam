@@ -1,155 +1,124 @@
 ---
 ---
-
+/* Base Styles */
 @import "{{ site.theme }}";
-// STYLING PREFERNCES for SITE
-// mixin used as a template for buttons
-  @mixin button {
-    width: auto;
-    height: auto;
-    border-radius: 10px;
-    background-color: #792626;
-    border: 3px solid black;
-    font-size: 1.5em;
+
+body {
+    background-color: rgb(46, 116, 67);
     color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    grid-column: span 1;
-    grid-row: span 1;
-
-    // Creates smooth animation effect
-    transition: all 0.5s; 
-  }
-  img {
-    width: 800px;
-    height: auto;
-  }
-  a, a:visited {
-    color: white
-  }
-  .headbody {
-    margin: 0;
     font-family: Arial, sans-serif;
-  }
+    margin: 0;
+}
 
-  header.site-header {
+a, a:visited {
+    color: white;
+}
+
+/* Header Styles */
+header.site-header {
     background-color: rgb(33, 87, 49);
     color: #fff;
     text-align: center;
-  }
+    padding: 15px; /* Add padding for better visual appearance */
+}
 
-  nav ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
+nav {
     display: flex;
     justify-content: center;
-  }
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+.headbody {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
 
-  nav li {
-    margin: 0 7px;
-  }
+header.site-header {
+  background-color: rgb(33, 87, 49);
+  color: #fff;
+  text-align: center;
+}
 
-  nav a {
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+
+nav li {
+  margin: 0 2px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  font-size: 2px;
+}
+nav a {
     text-decoration: none;
     color: #fff;
     font-weight: bold;
     font-size: 16px;
-  }
-  /* define class for redifined button */
-  .th {
+    margin: 0 8px; /* Increase margin for better spacing */
+}
+
+/* Button Styles */
+@mixin button {
+    width: auto;
+    height: auto;
+    border-radius: 10px;
+    font-size: 1.5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s;
+}
+
+.button {
+    @include button;
+    background-color: #792626;
+    border: 3px solid black;
+    color: white;
+}
+
+.button:hover {
+    background-color: #793c3c;
+}
+
+/* Redefined Button Styles */
+.th, td {
     text-align: center;
     vertical-align: middle;
     color: white;
     background-color: rgb(33, 87, 49);
-  }
-  td {
-    text-align: center;
-    vertical-align: middle;
-    color: white;
-    background-color: rgb(33, 87, 49);
-  }
-  input {
+}
+
+/* Input Styles */
+input {
     font-size: larger;
     color: white;
     background-color: rgb(46, 116, 67);
-  }
-  div {
-    color: white;
-    font-size: large
-  }
-  .onoff {
-    width: 70px; /* Adjust the width as needed */
-    height: auto; /* Maintain aspect ratio */
-  }
-  .button {
-    @include button;
-  }
-  body {
-    background-color: rgb(46, 116, 67);
-  }
-   /* darkens the background color on hover to create a selecting effect */
-  .button:hover {
-    background-color: #793c3c;
-  }
+}
 
-  /* "row style" is flexible size and aligns pictures in center */
-  .row {
-    align-items: center;
-    display: flex;
-  }
+/* Image Styles */
+img {
+    width: 800px;
+    height: auto;
+}
 
-  /* "column style" is one-third of the width with padding */
-  .column {
-    flex: 16.66%;
-    padding: 3px;
-  }
-  
-// STYLING FOR CALCULATOR
-  /* class to create the calculator's container; uses CSS grid dsiplay to partition off buttons */
-  .calculator-container { 
-    width: 90vw; /* this width and height is specified for mobile devices by default */
-    height: 80vh;
-    margin: 0 auto;
-  
-    display: grid;
-    grid-template-columns: repeat(4, 1fr); /* fr is a special unit; learn more here: https://css-tricks.com/introduction-fr-css-unit/  */
-    grid-template-rows: 0.5fr repeat(4, 1fr);
-    gap: 10px 10px;
-  }
-  
-  @media (min-width: 600px) { 
+@media (min-width: 600px) {
     .calculator-container {
         width: 40vw;
         height: 80vh;
     }
-  }
+}
 
-  /* styling for the calculator number button */
-  .calculator-number {
-    @extend .button;
-  }
-
-  /* styling for the calculator operation button */
-  .calculator-operation {
-    @extend .button;
-  }
-  
-  /* styling for the calculator clear button */
-  .calculator-clear {
-    @extend .button;
-    background-color: #e68b1c;
-  }
-  
-  /* styling for the calculator equals button */
-  .calculator-equals {
-    @extend .button;
-    background-color: #e70f0f;
-  }
-
-  .game-link {
+/* Game Link Styles */
+.game-link {
     display: block;
     margin: 10px auto;
     padding: 1em 2em;
