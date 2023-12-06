@@ -70,7 +70,7 @@ function getRandomWord() {
 </script>
 
 <h1>Binary Number Guessing Game</h1>
-<p>In order to convert text into binary, you must first convert each letter into its Ascii value. You must then convert this Ascii value into binary.</p>
+<p>In order to convert text into binary, you must first convert each letter into its hexadecimal value. You must then convert this Ascii value into binary.</p>
 
 <!-- Button to trigger the guessing function -->
 <button onclick="playBinaryWordGuessingGame()">Guess Now</button>
