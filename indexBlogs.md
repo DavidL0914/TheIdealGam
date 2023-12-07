@@ -1,5 +1,5 @@
 ---
 layout: blogs
-permalink: /blogs
-title: Blogs
+permalink: /posts
+title: Delay No More.
 ---
