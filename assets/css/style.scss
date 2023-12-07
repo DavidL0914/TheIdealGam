@@ -1,134 +1,220 @@
 ---
 ---
-/* Base Styles */
+
+// Importing theme
 @import "{{ site.theme }}";
 
+// Mixin for button styling
+@mixin button {
+  // Common button styles
+  width: auto;
+  height: auto;
+  border-radius: 10px;
+  background-color: #792626;
+  border: 3px solid black;
+  font-size: 1.5em;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-column: span 1;
+  grid-row: span 1;
+  transition: all 0.5s; // Smooth animation effect
+}
+
+/* Global styles */
 body {
-    background-color: rgb(46, 116, 67);
-    color: white;
-    font-family: Arial, sans-serif;
-    margin: 0;
-}
-
-a, a:visited {
-    color: white;
-}
-
-/* Header Styles */
-header.site-header {
-    background-color: rgb(33, 87, 49);
-    color: #fff;
-    text-align: center;
-    padding: 15px; /* Add padding for better visual appearance */
-}
-
-nav {
-    display: flex;
-    justify-content: center;
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
-}
-.headbody {
   margin: 0;
   font-family: Arial, sans-serif;
+  overflow-x: hidden; /* Hide horizontal overflow to prevent scrolling */
+  position: relative;
 }
 
+body::before {
+  content: "";
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 300%;
+  z-index: -1; /* Ensure the pseudo-element is behind the content */
+  background: url(https://img.freepik.com/premium-vector/starry-dark-night-sky-with-bright-stars_250841-315.jpg) 0 0 repeat;
+  animation: scrollRotateBackground 45s linear infinite; /* Background scrolling and rotation animations */
+  transform-origin: center center; /* Set the transform origin to the center horizontally and 80% down vertically */
+  overflow: hidden;
+}
+
+/* Animation for scrolling background and continuous rotation */
+@keyframes scrollRotateBackground {
+  0% {
+    background-position: 0 0;
+    transform: rotate(0deg);
+  }
+  100% {
+    background-position: 100% 0;
+    transform: rotate(90deg);
+  }
+}
+
+
+
+
+
+a, a:visited {
+  color: white;
+}
+
+// Header styles
 header.site-header {
-  background-color: rgb(33, 87, 49);
+  background-color: rgb(0, 0, 0);
   color: #fff;
   text-align: center;
 }
 
-nav ul {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  justify-content: center;
-}
+// Navigation styles
+nav {
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+  }
 
-nav li {
-  margin: 0 2px;
-}
+  li {
+    margin: 0 7px;
+  }
 
-nav a {
-  text-decoration: none;
-  color: #fff;
-  font-weight: bold;
-  font-size: 2px;
-}
-nav a {
+  a {
     text-decoration: none;
     color: #fff;
     font-weight: bold;
     font-size: 16px;
-    margin: 0 8px; /* Increase margin for better spacing */
+  }
 }
 
-/* Button Styles */
-@mixin button {
-    width: auto;
-    height: auto;
-    border-radius: 10px;
-    font-size: 1.5em;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: all 0.5s;
-}
-
+// Button styles
 .button {
-    @include button;
-    background-color: #792626;
-    border: 3px solid black;
-    color: white;
-}
+  @include button;
 
-.button:hover {
+  // Hover effect
+  &:hover {
     background-color: #793c3c;
+  }
 }
 
-/* Redefined Button Styles */
+// Table styles
 .th, td {
-    text-align: center;
-    vertical-align: middle;
-    color: white;
-    background-color: rgb(33, 87, 49);
+  text-align: center;
+  vertical-align: middle;
+  color: white;
+  background-color: rgb(33, 87, 49);
 }
 
-/* Input Styles */
+// Input styles
 input {
-    font-size: larger;
-    color: white;
-    background-color: rgb(46, 116, 67);
+  font-size: larger;
+  color: white;
+  background-color: rgb(46, 116, 67);
 }
 
-/* Image Styles */
+// Image styles
 img {
-    width: 800px;
-    height: auto;
+  width: 800px;
+  height: auto;
 }
 
-@media (min-width: 600px) {
-    .calculator-container {
-        width: 40vw;
-        height: 80vh;
-    }
+// Miscellaneous styles
+div {
+  color: white;
+  font-size: large;
 }
 
-/* Game Link Styles */
+.onoff {
+  width: 70px;
+  height: auto;
+}
+
+// Calculator styles
+.calculator-container {
+  width: 90vw;
+  height: 80vh;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 0.5fr repeat(4, 1fr);
+  gap: 10px 10px;
+
+  // Responsive design
+  @media (min-width: 600px) {
+    width: 40vw;
+  }
+}
+
+.calculator-number, .calculator-operation, .calculator-clear, .calculator-equals {
+  @extend .button;
+}
+
+.calculator-clear {
+  background-color: #e68b1c;
+}
+
+.calculator-equals {
+  background-color: #e70f0f;
+}
+
+// Game link styles
 .game-link {
-    display: block;
-    margin: 10px auto;
-    padding: 1em 2em;
-    text-decoration: none;
-    font-size: 1.2em;
-    background-color: #4CAF50;
-    color: #fff;
-    border-radius: 5px;
+  display: block;
+  margin: 10px auto;
+  padding: 1em 2em;
+  text-decoration: none;
+  font-size: 1.2em;
+  background-color: #4CAF50;
+  color: #fff;
+  border-radius: 5px;
+
+  // Hover effect
+  &:hover {
+    background-color: #45a049;
+  }
 }
 
-.game-link:hover {
-    background-color: #45a049;
+// Blog page styles
+.blog-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.blog-card {
+  width: 80%; // Adjust the width as needed
+  margin: 20px;
+  padding: 20px;
+  background-color: #000000;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px #fff;
+  transition: box-shadow 0.3s;
+
+  &:hover {
+    box-shadow: 0 8px 16px #ECBE07;
+  }
+}
+
+.blog-title {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: rgb(0, 0, 0);  
+  margin-bottom: 10px;
+}
+
+.blog-date {
+  font-size: 0.9em;
+  color: #888;
+}
+
+.blog-excerpt {
+  font-size: 1em;
+  color: #555;
+  margin-top: 10px;
 }
