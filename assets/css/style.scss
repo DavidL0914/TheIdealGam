@@ -22,24 +22,43 @@
   transition: all 0.5s; // Smooth animation effect
 }
 
-// Global styles
+/* Global styles */
 body {
-  background-image: url(https://img.freepik.com/premium-vector/starry-dark-night-sky-with-bright-stars_250841-315.jpg);
   margin: 0;
   font-family: Arial, sans-serif;
-  overflow-x: hidden; // Hide horizontal overflow to prevent scrolling
-  animation: scrollBackground 60s linear infinite; // Background scrolling animation
+  overflow-x: hidden; /* Hide horizontal overflow to prevent scrolling */
+  position: relative;
 }
 
-// Animation for scrolling background
-@keyframes scrollBackground {
+body::before {
+  content: "";
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 300%;
+  z-index: -1; /* Ensure the pseudo-element is behind the content */
+  background: url(https://img.freepik.com/premium-vector/starry-dark-night-sky-with-bright-stars_250841-315.jpg) 0 0 repeat;
+  animation: scrollRotateBackground 45s linear infinite; /* Background scrolling and rotation animations */
+  transform-origin: center center; /* Set the transform origin to the center horizontally and 80% down vertically */
+  overflow: hidden;
+}
+
+/* Animation for scrolling background and continuous rotation */
+@keyframes scrollRotateBackground {
   0% {
     background-position: 0 0;
+    transform: rotate(0deg);
   }
   100% {
     background-position: 100% 0;
+    transform: rotate(90deg);
   }
 }
+
+
+
+
 
 a, a:visited {
   color: white;
