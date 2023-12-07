@@ -1,7 +1,6 @@
 ---
 toc: false
 layout: post
-hide: true
 title: Binary Quiz
 courses: { compsci: {week: 14 } } 
 type: tangibles

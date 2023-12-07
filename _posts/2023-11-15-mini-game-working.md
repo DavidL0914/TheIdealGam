@@ -1,7 +1,6 @@
 ---
 toc: False
 layout: post
-hide: True
 title: Binary Word Game
 description: The Word Game!
 courses: {'compsci': {'week': 14}}

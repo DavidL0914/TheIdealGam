@@ -1,6 +1,6 @@
 ---
 layout: schedule
-title: Computer Science Time Box Page
+title: Delay No More.
 units: "4"
 course: compsci
 ---
