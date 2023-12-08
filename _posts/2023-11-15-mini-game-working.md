@@ -5,6 +5,7 @@ title: Binary Word Game
 description: The Word Game!
 courses: {'compsci': {'week': 14}}
 type: tangibles
+hide: true
 ---
 
 <html lang="en">
