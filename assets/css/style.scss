@@ -1,12 +1,8 @@
 ---
 ---
-
-// Importing theme
 @import "{{ site.theme }}";
 
-// Mixin for button styling
 @mixin button {
-  // Common button styles
   width: auto;
   height: auto;
   border-radius: 10px;
@@ -19,14 +15,13 @@
   align-items: center;
   grid-column: span 1;
   grid-row: span 1;
-  transition: all 0.5s; // Smooth animation effect
+  transition: all 0.5s;
 }
 
-/* Global styles */
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  overflow-x: hidden; /* Hide horizontal overflow to prevent scrolling */
+  overflow-x: hidden;
   position: relative;
 }
 
@@ -37,14 +32,13 @@ body::before {
   left: -50%;
   width: 200%;
   height: 300%;
-  z-index: -1; /* Ensure the pseudo-element is behind the content */
+  z-index: -1;
   background: url(https://img.freepik.com/premium-vector/starry-dark-night-sky-with-bright-stars_250841-315.jpg) 0 0 repeat;
-  animation: scrollRotateBackground 45s linear infinite; /* Background scrolling and rotation animations */
-  transform-origin: center center; /* Set the transform origin to the center horizontally and 80% down vertically */
+  animation: scrollRotateBackground 45s linear infinite;
+  transform-origin: center center;
   overflow: hidden;
 }
 
-/* Animation for scrolling background and continuous rotation */
 @keyframes scrollRotateBackground {
   0% {
     background-position: 0 0;
@@ -56,76 +50,100 @@ body::before {
   }
 }
 
-
-
-
-
-a, a:visited {
+a,
+a:visited {
   color: white;
 }
 
-// Header styles
 header.site-header {
   background-color: rgb(0, 0, 0);
   color: #fff;
   text-align: center;
 }
 
-// Navigation styles
+/* Navigation Bar Styles */
 nav {
-  ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-  }
-
-  li {
-    margin: 0 7px;
-  }
-
-  a {
-    text-decoration: none;
-    color: #fff;
-    font-weight: bold;
-    font-size: 16px;
-  }
+  background-color: #4a4a4a;
+  padding: 15px 0;
+  width: 100%;
+  box-sizing: border-box;
+  text-align: center;
 }
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+nav li {
+  margin: 0 20px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  font-size: 16px;
+  transition: color 0.3s ease-in-out;
+}
+
+nav a:hover {
+  color: #ffcc00;
+}
+
+/* Header Navigation Styles */
 .headnav {
-  background-color: black;
+  background-color: #1b1b1b;
+  padding: 15px 0;
+  width: 100%;
+  box-sizing: border-box;
+  text-align: center;
+  margin-bottom: 20px;
+  border-radius: 15px;
 }
-// Button styles
+
+.headnav a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  font-size: 18px;
+  margin: 0 25px;
+  transition: color 0.3s ease-in-out;
+}
+
+.headnav a:hover {
+  color: #ffcc00;
+}
+
 .button {
   @include button;
-
-  // Hover effect
   &:hover {
     background-color: #793c3c;
   }
 }
 
-// Table styles
-.th, td {
+.th,
+td {
   text-align: center;
   vertical-align: middle;
   color: white;
   background-color: rgb(33, 87, 49);
 }
 
-// Input styles
 input {
   font-size: larger;
   color: white;
   background-color: rgb(46, 116, 67);
 }
 
-// Image styles
 img {
   width: 800px;
   height: auto;
 }
 
-// Miscellaneous styles
 div {
   color: white;
   font-size: large;
@@ -136,7 +154,6 @@ div {
   height: auto;
 }
 
-// Calculator styles
 .calculator-container {
   width: 90vw;
   height: 80vh;
@@ -146,13 +163,15 @@ div {
   grid-template-rows: 0.5fr repeat(4, 1fr);
   gap: 10px 10px;
 
-  // Responsive design
   @media (min-width: 600px) {
     width: 40vw;
   }
 }
 
-.calculator-number, .calculator-operation, .calculator-clear, .calculator-equals {
+.calculator-number,
+.calculator-operation,
+.calculator-clear,
+.calculator-equals {
   @extend .button;
 }
 
@@ -164,24 +183,23 @@ div {
   background-color: #e70f0f;
 }
 
-// Game link styles
 .game-link {
   display: block;
   margin: 10px auto;
   padding: 1em 2em;
   text-decoration: none;
   font-size: 1.2em;
-  background-color: #4CAF50;
-  color: #fff;
-  border-radius: 5px;
+  background-color: #000000;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px #fff;
+  transition: box-shadow 0.3s;
+  margin-bottom: 30px;
 
-  // Hover effect
   &:hover {
-    background-color: #45a049;
+    box-shadow: 0 8px 16px #ECBE07;
   }
 }
 
-// Blog page styles
 .blog-container {
   display: flex;
   flex-wrap: wrap;
@@ -189,7 +207,7 @@ div {
 }
 
 .blog-card {
-  width: 80%; // Adjust the width as needed
+  width: 80%;
   margin: 20px;
   padding: 20px;
   background-color: #000000;
@@ -205,7 +223,7 @@ div {
 .blog-title {
   font-size: 1.5em;
   font-weight: bold;
-  color: rgb(0, 0, 0);  
+  color: rgb(0, 0, 0);
   margin-bottom: 10px;
 }
 
@@ -218,4 +236,48 @@ div {
   font-size: 1em;
   color: #555;
   margin-top: 10px;
+}
+
+#game-board {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+#racetrack {
+  width: 80%;
+  height: 100px;
+  border: 2px solid #000;
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.car {
+  width: 50px;
+  height: 30px;
+  position: absolute;
+  transition: left 0.5s ease;
+  margin-top: 10px;
+  background-size: cover;
+}
+
+.car-preview {
+  width: 100px;
+  height: 50px;
+  background-size: cover;
+  margin-top: 10px;
+}
+
+#game-status {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+#start-game {
+  @extend .game-link;
+}
+
+#car-selection button {
+  @extend .button;
 }
