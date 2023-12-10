@@ -122,7 +122,7 @@ nav a:hover {
 }
 
 .button {
-  @include butto;
+  @include button;
   &:hover {
     background-color: #793c3c;
   }
