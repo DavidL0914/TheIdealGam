@@ -11,167 +11,232 @@ title: Racing Gam
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Racing Game</title>
 
-  <style>
-    /* General styling for the page */
-    body {
-      background-color: #111;
-      color: #fff;
-      font-family: 'Arial', sans-serif;
-    }
+<style>
+/* General styling for the page */
+body {
+  background-color: #111;
+  color: #fff;
+  font-family: 'Arial', sans-serif;
+}
 
-    /* Styling for buttons */
-    button {
-      background-color: #363636;
-      color: #fff;
-      border: 2px solid #4d4d4d;
-      padding: 10px 15px;
-      margin: 5px;
-      cursor: pointer;
-      border-radius: 5px;
-      font-size: 16px;
-    }
+/* Styling for buttons */
+button {
+  background-color: #363636;
+  color: #fff;
+  border: 2px solid #4d4d4d;
+  padding: 10px 15px;
+  margin: 5px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 16px;
+}
 
-    button:hover {
-      background-color: #595959;
-    }
+button:hover {
+  background-color: #595959;
+}
 
-    /* Styling for selects */
-    select {
-      background-color: #363636;
-      color: #fff;
-      border: 2px solid #4d4d4d;
-      padding: 5px;
-      margin: 5px;
-      cursor: pointer;
-      border-radius: 5px;
-    }
+/* Styling for selects */
+select {
+  background-color: #363636;
+  color: #fff;
+  border: 2px solid #4d4d4d;
+  padding: 5px;
+  margin: 5px;
+  cursor: pointer;
+  border-radius: 5px;
+}
 
-    select:hover {
-      background-color: #595959;
-    }
+select:hover {
+  background-color: #595959;
+}
 
-    /* Styling for the game board container */
-    #game-board {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 20px;
-    }
+/* Styling for the game board container */
+#game-board {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
 
-    /* Styling for hidden elements */
-    .hidden {
-      display: none;
-    }
+/* Styling for hidden elements */
+.hidden {
+  display: none;
+}
 
-    /* Car selection styles */
-    #car-selection {
-      background-color: #333;
-      padding: 20px;
-      border-radius: 10px;
-      margin-top: 20px;
-    }
+/* Car selection styles */
+#car-selection {
+  background-color: #333;
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 20px;
+}
 
-    /* Car preview styles */
-    .car-preview {
-      width: 64px;
-      height: 76.8px;
-      background-size: contain;
-      margin-bottom: 10px;
-      background-repeat: no-repeat;
-    }
+/* Car preview styles */
+.car-preview {
+  width: 64px;
+  height: 76.8px;
+  background-size: contain;
+  margin-bottom: 10px;
+  background-repeat: no-repeat;
+}
 
-    /* Racetrack styles */
-    #racetrack {
-      position: relative;
-      height: 200px;
-      background-color: #001f3f;
-      margin-top: 20px;
-    }
+/* Racetrack styles */
+#racetrack {
+  position: relative;
+  height: 200px;
+  background-color: #001f3f;
+  margin-top: 20px;
+}
 
-    /* Finish line styles */
-    #finish-line {
-      position: absolute;
-      top: 0;
-      left: calc(100% - 20px);
-      width: 20px;
-      height: 100%;
-      background: linear-gradient(45deg, #000 25%, #fff 25%, #fff 50%, #000 50%, #000 75%, #fff 75%, #fff 100%);
-      background-size: 20px 20px;
-    }
+/* Finish line styles */
+#finish-line {
+  position: absolute;
+  top: 0;
+  left: calc(100% - 20px);
+  width: 20px;
+  height: 100%;
+  background: linear-gradient(45deg, #000 25%, #fff 25%, #fff 50%, #000 50%, #000 75%, #fff 75%, #fff 100%);
+  background-size: 20px 20px;
+}
 
-    /* Car styles */
-    .car {
-      position: absolute;
-      width: 12%;
-      height: 24%;
-      background-size: cover;
-      background-repeat: no-repeat;
-      margin-bottom: 10px;
-      transform: rotate(90deg);
-      margin-left: 10px;
-    }
+/* Car styles */
+.car {
+  position: absolute;
+  width: 12%;
+  height: 24%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-bottom: 10px;
+  transform: rotate(90deg);
+  margin-left: 10px;
+}
 
-    /* Game status and information styles */
-    #game-status,
-    #car-position,
-    #target-number {
-      color: #fff;
-      font-size: 18px;
-      margin-bottom: 10px;
-    }
+/* Game status and information styles */
+#game-status,
+#car-position,
+#target-number {
+  color: #fff;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
 
-    /* User input styles */
-    #user-input {
-      background-color: #000;
-      color: #fff;
-      border: 2px solid #333;
-      padding: 10px;
-      margin-right: 10px;
-      font-size: 16px;
-      border-radius: 5px;
-    }
+/* User input styles */
+#user-input {
+  background-color: #000;
+  color: #fff;
+  border: 2px solid #333;
+  padding: 10px;
+  margin-right: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+}
 
-    /* Submit button styles */
-    #submit-button {
-      background-color: #4d4dff;
-      color: #fff;
-      border: 2px solid #333;
-      padding: 10px 15px;
-      cursor: pointer;
-      border-radius: 5px;
-      font-size: 16px;
-    }
+/* Submit button styles */
+#submit-button {
+  background-color: #4d4dff;
+  color: #fff;
+  border: 2px solid #333;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 16px;
+}
 
-    #submit-button:hover {
-      background-color: #1a1aff;
-    }
+#submit-button:hover {
+  background-color: #1a1aff;
+}
 
-    /* Message popup styles */
-    #message-popup {
-      position: fixed;
-      bottom: 20px;
-      left: 50%;
-      transform: translateX(-50%);
-      background-color: #ff0000;
-      color: #fff;
-      padding: 15px;
-      border-radius: 10px;
-      text-align: center;
-      display: none;
-    }
+/* Message popup styles */
+#message-popup {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #ff0000;
+  color: #fff;
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+  display: none;
+}
 
-    /* Winning animation styles */
-    @keyframes winningAnimation {
-      0% {
-        transform: scale(1);
-      }
-      50% {
-        transform: scale(1.2);
-      }
-      100% {
-        transform: scale(1);
-      }
-    }
-  </style>
+/* Winning animation styles */
+@keyframes winningAnimation {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Instructions button styles */
+#instructions-button {
+  transform: translate(150%, 700%);
+  text-decoration: none;
+  background-color: #000000;
+  box-shadow: 0 4px 8px #fff;
+  transition: box-shadow 0.3s;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 16px;
+  z-index: 1;
+  border: none;
+}
+
+#instructions-button:hover {
+  box-shadow: 0 8px 16px #ECBE07;
+}
+
+#instructions-button.top-left {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  bottom: auto;
+  transform: none;
+}
+
+/* Modal styles */
+#instructions-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+#instructions-content {
+  background-color: #181818;
+  color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 600px;
+  text-align: left;
+}
+
+#close-button {
+  background-color: #000000;
+  box-shadow: 0 4px 8px #fff;
+  transition: box-shadow 0.3s;
+  border-radius: 5px;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+#close-button:hover {
+  box-shadow: 0 8px 16px #ECBE07;
+}
+</style>
 </head>
 
 <body>
@@ -188,7 +253,6 @@ title: Racing Gam
         <option value="https://files.catbox.moe/u4l0m2.png">Car 4</option>
       </select>
       <div id="player1-preview" class="car-preview"></div>
-
       <p>Player 2, select your car:</p>
       <select id="player2-car" onchange="previewCarImage('player2-preview', this.value)">
         <option value="https://files.catbox.moe/zgi62v.png">Car 1</option>
@@ -198,12 +262,12 @@ title: Racing Gam
       </select>
       <div id="player2-preview" class="car-preview"></div>
 
-      <!-- Start Game button within Car Selection section -->
-      <button onclick="showGameElements()">Start Game</button>
-    </div>
+<!-- Start Game button within Car Selection section -->
+  <button onclick="showGameElements()">Start Game</button>
+</div>
 
-    <!-- Game Status, Racetrack, and related information -->
-    <div id="game-status" class="hidden">Binary Racing Game! Press "Start Game" to begin.</div>
+<!-- Game Status, Racetrack, and related information -->
+  <div id="game-status" class="hidden">Binary Racing Game! Press "Start Game" to begin.</div>
     <div id="racetrack" class="hidden">
       <div id="finish-line"></div>
       <div id="car1" class="car" style="bottom: 0;"></div>
@@ -217,6 +281,17 @@ title: Racing Gam
 
   <!-- Message popup for correct/incorrect answers -->
   <div id="message-popup" class="hidden"></div>
+
+  <button id="instructions-button" onclick="showInstructions()">Instructions</button>
+  <!-- Instructions Modal -->
+  <div id="instructions-modal">
+      <div id="instructions-content">
+          <h2>Instructions for this 2 Player Game:</h2>
+          <p>Goal: Be the first player to move forward 10 spaces and cross the finish line. <br><br> Getting Started: Click the "Start Game" button to initiate the game, then select the car you want. Start Game when you're ready. <br><br> How to play: A target decimal number will be randomly generated for each turn. Convert this number to the appropriate binary number and submit your answer. If your binary guess is correct, your car moves forward by one space. If your guess is incorrect, you lose your turn and your opponent gets a chance to get the right answer.</p>
+
+  <button id="close-button" onclick="closeInstructions()">Close</button>
+        </div>
+  </div>
 
 <script>
   // Global variables
@@ -238,19 +313,24 @@ title: Racing Gam
   // Initialize car preview on page load
   window.onload = previewCar1OnLoad;
 
-  // Show car selection and start the game
-  function showGameElements() {
-    document.getElementById('start-game').classList.add('hidden');
-    document.getElementById('car-selection').classList.add('hidden');
-    document.getElementById('game-status').classList.remove('hidden');
-    document.getElementById('racetrack').classList.remove('hidden');
-    document.getElementById('car-position').classList.remove('hidden');
-    document.getElementById('target-number').classList.remove('hidden');
-    document.getElementById('user-input').classList.remove('hidden');
-    document.getElementById('user-input').focus();
-    document.getElementById('submit-button').classList.remove('hidden');
-    startGame();
-  }
+// Show car selection and start the game
+function showGameElements() {
+  document.getElementById('start-game').classList.add('hidden');
+  document.getElementById('car-selection').classList.add('hidden');
+  document.getElementById('game-status').classList.remove('hidden');
+  document.getElementById('racetrack').classList.remove('hidden');
+  document.getElementById('car-position').classList.remove('hidden');
+  document.getElementById('target-number').classList.remove('hidden');
+  document.getElementById('user-input').classList.remove('hidden');
+  document.getElementById('submit-button').classList.remove('hidden');
+
+  // Add the class to move the instructions button to the top-left corner
+  const instructionsButton = document.getElementById('instructions-button');
+  instructionsButton.classList.add('top-left');
+
+  startGame();
+}
+
 
   // Display a message for a wrong answer
   function showWrongAnswerMessage() {
@@ -353,7 +433,14 @@ title: Racing Gam
   function showCarSelection() {
     document.getElementById('start-game').style.display = 'none';
     document.getElementById('car-selection').style.display = 'block';
-  }
+
+  const instructionsButton = document.getElementById('instructions-button');
+    instructionsButton.style.position = 'fixed';
+    instructionsButton.style.top = '10px';
+    instructionsButton.style.left = '10px';
+    instructionsButton.style.bottom = 'auto';
+    instructionsButton.style.transform = 'none';
+}
 
   // Preview car image for car selection
   function previewCarImage(playerPreviewId, imageUrl) {
@@ -399,6 +486,16 @@ title: Racing Gam
       messagePopup.style.display = 'none';
     }, 3000);
   }
+
+// Function to show the instructions modal
+function showInstructions() {
+  document.getElementById('instructions-modal').style.display = 'flex';
+}
+
+// Function to close the instructions modal
+  function closeInstructions() {
+  document.getElementById('instructions-modal').style.display = 'none';
+}
 </script>
 </body>
 </html>
