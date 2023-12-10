@@ -6,7 +6,7 @@
   width: auto;
   height: auto;
   border-radius: 10px;
-  background-color: #792626;
+  background-color: #ffcc00;
   border: 3px solid black;
   font-size: 1.5em;
   color: white;
@@ -24,7 +24,9 @@ body {
   overflow-x: hidden;
   position: relative;
 }
-
+table th {
+  background-color: black;
+}
 body::before {
   content: "";
   position: fixed;
@@ -58,13 +60,13 @@ a:visited {
 header.site-header {
   background-color: rgb(0, 0, 0);
   color: #fff;
-  text-align: center;
+  text-align: left;
 }
 
 /* Navigation Bar Styles */
 nav {
   background-color: #4a4a4a;
-  padding: 15px 0;
+  padding: 5px 0;
   width: 100%;
   box-sizing: border-box;
   text-align: center;
@@ -79,7 +81,7 @@ nav ul {
 }
 
 nav li {
-  margin: 0 20px;
+  margin: 0 2px;
 }
 
 nav a {
@@ -97,10 +99,10 @@ nav a:hover {
 /* Header Navigation Styles */
 .headnav {
   background-color: #1b1b1b;
-  padding: 15px 0;
+  padding: 10px 0;
   width: 100%;
   box-sizing: border-box;
-  text-align: center;
+  align-items: left;
   margin-bottom: 20px;
   border-radius: 15px;
 }
@@ -110,7 +112,8 @@ nav a:hover {
   color: #fff;
   font-weight: bold;
   font-size: 18px;
-  margin: 0 25px;
+  text-align: left;
+  margin: 0 10px;
   transition: color 0.3s ease-in-out;
 }
 
@@ -119,7 +122,7 @@ nav a:hover {
 }
 
 .button {
-  @include button;
+  @include butto;
   &:hover {
     background-color: #793c3c;
   }
@@ -130,13 +133,13 @@ td {
   text-align: center;
   vertical-align: middle;
   color: white;
-  background-color: rgb(33, 87, 49);
+  background-color: rgb(0, 0, 0);
 }
 
 input {
   font-size: larger;
   color: white;
-  background-color: rgb(46, 116, 67);
+  background-color: rgb(0, 0, 0);
 }
 
 img {
@@ -152,35 +155,6 @@ div {
 .onoff {
   width: 70px;
   height: auto;
-}
-
-.calculator-container {
-  width: 90vw;
-  height: 80vh;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: 0.5fr repeat(4, 1fr);
-  gap: 10px 10px;
-
-  @media (min-width: 600px) {
-    width: 40vw;
-  }
-}
-
-.calculator-number,
-.calculator-operation,
-.calculator-clear,
-.calculator-equals {
-  @extend .button;
-}
-
-.calculator-clear {
-  background-color: #e68b1c;
-}
-
-.calculator-equals {
-  background-color: #e70f0f;
 }
 
 .game-link {
