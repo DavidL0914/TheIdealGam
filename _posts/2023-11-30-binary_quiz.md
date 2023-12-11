@@ -18,15 +18,25 @@ hide: true
             margin: 50px;
             background-color: #f7f7f7;
         }
-
+        /* Message popup styles */
+        #message-popup {
+            position: fixed;
+            bottom : 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #ff0000;
+            color: #fff;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            display: none;
+            }
         h1 {
             color: #333;
         }
-
         p {
             color: #555;
         }
-
         button {
             padding: 10px 20px;
             font-size: 16px;
@@ -36,27 +46,22 @@ hide: true
             cursor: pointer;
             transition: background-color 0.3s ease;
         }
-
         button:hover {
             background-color: #2980b9;
         }
-
         #result {
             margin-top: 20px;
             font-size: 18px;
         }
-
         #binaryDisplay {
             font-size: 24px;
             margin-bottom: 20px;
         }
-
         #decimalRange {
             display: flex;
             justify-content: space-between;
             margin-top: 20px;
         }
-
         .distanceBar {
             width: 100%;
             height: 20px;
@@ -64,12 +69,10 @@ hide: true
             margin-top: 20px;
             background-color: #ecf0f1;
         }
-
         .distanceFill {
             height: 100%;
             position: absolute;
         }
-
         .distanceText {
             position: absolute;
             bottom: -20px;
@@ -78,15 +81,12 @@ hide: true
             font-size: 12px;
             color: #333;
         }
-
         #actualDistanceBar {
             margin-bottom: 10px;
         }
-
         #actualDistanceFill {
             background-color: #2ecc71;
         }
-
         #guessedDistanceFill {
             background-color: #e74c3c;
         }
@@ -125,6 +125,20 @@ hide: true
     <div class="distanceFill" id="guessedDistanceFill"></div>
     <span class="distanceText">Guessed Value</span>
 </div>
+
+<!-- Message popup for correct/incorrect answers -->
+  <div id="message-popup" class="hidden"></div>
+
+  <button id="instructions-button" onclick="showInstructions()">Instructions</button>
+  <!-- Instructions Modal -->
+  <div id="instructions-modal">
+      <div id="instructions-content">
+          <h2>Instructions for this 2 Player Game:</h2>
+          <p>Goal: Be the first player to move forward 10 spaces and cross the finish line. <br><br> Getting Started: Click the "Start Game" button to initiate the game, then select the car you want. Start Game when you're ready. <br><br> How to play: A target decimal number will be randomly generated for each turn. Convert this number to the appropriate binary number and submit your answer. If your binary guess is correct, your car moves forward by one space. If your guess is incorrect, you lose your turn and your opponent gets a chance to get the right answer.</p>
+
+  <button id="close-button" onclick="closeInstructions()">Close</button>
+        </div>
+  </div>
 
 <script>
     function reload() {
