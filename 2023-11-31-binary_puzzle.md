@@ -8,7 +8,7 @@ type: tangibles
 ---
 <html>
 {% assign BITS = 8 %}
-
+<body onload="Instructions()">
 <style>
     td {
         text-align: center;
@@ -19,9 +19,9 @@ type: tangibles
 <table>
     <thead>
         <tr class="header" id="table">
-            <th class = "th">Double</th>
+            <th class = "th">Double / Left Shift</th>
             <th class = "th">Binary</th>
-            <th class = "th">Halve</th>
+            <th class = "th">Halve / Right Shift</th>
         </tr>
     </thead>
     <tbody>
@@ -63,7 +63,11 @@ Liquid for loop includes last number, thus the Minus
     </tbody>
 </table>
 <div id = "result"></div>
+<button onclick = "reveal()">Reveal Answer</button>
+<div id="transformationList"></div>
 <script>
+    const transformationListElement = document.getElementById("transformationList");
+    let transformationList = [];
     let changes = 0
     const BITS = {{ BITS }};
     const MAX = 2 ** BITS - 1;
@@ -71,7 +75,17 @@ Liquid for loop includes last number, thus the Minus
     const IMAGE_ON = "{{site.baseurl}}/images/on.png";
     const MSG_OFF = "Turn off";
     const IMAGE_OFF = "{{site.baseurl}}/images/off.png"
-    function checkChanges() {
+    function reveal() {
+      transformationList.forEach(action => {
+        transformationListElement.innerHTML += `<li>${action}</li>`;
+        });
+      transformationListElement.innerHTML += "</ul>";
+      transformationList = [];
+    }
+    function Instructions() {
+        alert("Welcome to the binary puzzle game!\n\nIn this game, you have to get one number in binary to another in a given number of steps.\n You can accomplish this by either switching the bits from 0 to 1 and vice versa, or using left and right shifts. \n\nThe right shift removes the last bit and shifts all the bits to the right, leaving the first bit as a 0, effectively halving the number in decimal. \nThe left shift removes the first bit, shifts all the other bits one to the left, leaving the last bit as a 0, effectively doubling the number in decimal. \n\nIn this game, you must use these tools to get one number to another in the least number of steps possible. \n\nIn the display, the sun means 1, and the moon means 0. \nThe bit is also displayed below the slot it is in. \n\nHave fun, and happy learning!")
+    }
+    async function checkChanges() {
     const currentBinary = getBits();
     console.log(currentBinary)
     if (changes === result.steps) {
@@ -80,12 +94,18 @@ Liquid for loop includes last number, thus the Minus
             console.log("You've successfully completed the game!");
             document.getElementById("result").innerHTML = "Congratulations! You've successfully completed the game!";
             changes = 0;
+            transformationListElement.innerHTML = ""
+            await new Promise(r => setTimeout(r, 1500));
+            document.getElementById("result").innerHTML = " "
+            transformationList = [];
             displayResults();
         }
         else {
             console.log("Too many changes! Try again.");
             document.getElementById("result").innerHTML = "Womp womp... Too many changes! Try Again.";
             changes = 0;
+            transformationListElement.innerHTML = ""
+            transformationList = [];
             displayResults();
     }
 }
@@ -152,7 +172,6 @@ Liquid for loop includes last number, thus the Minus
         changes++;
         checkChanges()
     }
-
     // Function for right shift
     function rightShift() {
         let binary = getBits();
@@ -161,7 +180,6 @@ Liquid for loop includes last number, thus the Minus
         changes++;
         checkChanges()
     }
-
     // Helper function to update the binary representation and visuals
     function updateBinary(binary) {
         setConversions(binary);
@@ -180,61 +198,52 @@ Liquid for loop includes last number, thus the Minus
 function minActionsToTransformBinary(start, target) {
     const queue = [{ current: start, actions: [], steps: 0 }];
     const visited = new Set([start]);
-
     while (queue.length > 0) {
         const { current, actions, steps } = queue.shift();
-
         if (current === target) {
             return { actions, steps };
         }
-
         for (let i = 0; i < current.length; i++) {
             const newBinary = current.slice(0, i) + (current[i] === '1' ? '0' : '1') + current.slice(i + 1);
             if (!visited.has(newBinary)) {
                 visited.add(newBinary);
-                queue.push({ current: newBinary, actions: actions.concat(`Swap bit at position ${i}`), steps: steps + 1 });
+                queue.push({ current: newBinary, actions: actions.concat(`Swap bit at position ${i+1}\n`), steps: steps + 1 });
             }
         }
-
         if (current.length === target.length) {
             const leftShift = current.slice(1) + '0';
             if (!visited.has(leftShift)) {
                 visited.add(leftShift);
-                queue.push({ current: leftShift, actions: actions.concat('Left shift'), steps: steps + 1 });
+                queue.push({ current: leftShift, actions: actions.concat('Left shift\n'), steps: steps + 1 });
             }
         }
-
         if (current.length === target.length) {
             const rightShift = '0' + current.slice(0, -1);
             if (!visited.has(rightShift)) {
                 visited.add(rightShift);
-                queue.push({ current: rightShift, actions: actions.concat('Right shift'), steps: steps + 1 });
+                queue.push({ current: rightShift, actions: actions.concat('Right shift\n'), steps: steps + 1 });
             }
         }
     }
-
     return null; // If transformation is not possible
 }
-
   function displayResults() {
     startBinary = generateRandomBinary();
     targetBinary = generateRandomBinary();
     result = minActionsToTransformBinary(startBinary, targetBinary);
-
     console.log(`Actions to transform ${startBinary} to ${targetBinary}:`);
     if (result) {
       result.actions.forEach((action, index) => {
+        transformationList.push(`${index + 1}. ${action}`);
         console.log(`${index + 1}. ${action}`);
       });
       console.log(`Number of steps: ${result.steps}`);
     } else {
       console.log("Transformation not possible.");
     }
-
     document.getElementById("display").innerHTML = "Goal: Transform " + startBinary + " to " + targetBinary + " in " + result.steps + " steps";
     updateBinary(startBinary)
   }
-
 function generateRandomBinary() {
     let binaryNumber = '';
     for (let i = 0; i < 8; i++) {
@@ -247,4 +256,3 @@ function generateRandomBinary() {
 }
 displayResults();
 </script>
-</html>
