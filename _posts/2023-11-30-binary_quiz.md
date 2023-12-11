@@ -6,7 +6,6 @@ courses: { compsci: {week: 14 } }
 type: tangibles
 hide: true
 ---
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
