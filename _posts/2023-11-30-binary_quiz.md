@@ -6,6 +6,7 @@ courses: { compsci: {week: 14 } }
 type: tangibles
 hide: true
 ---
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -94,33 +95,55 @@ hide: true
 </head>
 <body>
 
-<script>
-    // Generate a random decimal number between 0 and 255
+<h1>Binary Number Guessing Game</h1>
+<p>Convert the following binary number to decimal and enter the decimal value:</p>
 
+<!-- Display the binary version on the screen -->
+<div id="binaryDisplay"></div>
+
+<!-- Provide an input field for the user's guess -->
+<label for="userGuess">Enter your guess in decimal:</label>
+<input type="text" id="userGuess">
+<button onclick="checkGuess()">Guess Now</button>
+<button onclick="reload()">Try Again</button>
+
+<!-- Display the result on the page -->
+<div id="result"></div>
+
+<!-- Display the decimal range -->
+<div id="decimalRange">
+    <span>0</span>
+    <span>255</span>
+</div>
+
+<!-- Display the distance bars -->
+<div class="distanceBar" id="actualDistanceBar">
+    <div class="distanceFill" id="actualDistanceFill"></div>
+    <span class="distanceText">Actual Value</span>
+</div>
+
+<div class="distanceBar" id="guessedDistanceBar">
+    <div class="distanceFill" id="guessedDistanceFill"></div>
+    <span class="distanceText">Guessed Value</span>
+</div>
+
+<script>
+    function reload() {
+        location.reload()
+    }
     // Function to convert decimal to binary with leading zeroes
     function decimalToBinary(decimal) {
         // Use toString(2) to convert to binary and padStart to add leading zeroes
         return decimal.toString(2).padStart(8, '0');
     }
 
+    // Generate a random decimal number between 0 and 255
+    const correctDecimal = Math.floor(Math.random() * 256);
+
     // Convert the decimal number to binary
+    const correctBinary = decimalToBinary(correctDecimal);
 
-    // Function to check the user's input
-    function checkGuess() {
-        // Get the user's input
-        const correctDecimal = Math.floor(Math.random() * 256);
-        const correctBinary = decimalToBinary(correctDecimal);
-        const userDecimalGuess = parseInt(prompt(`Convert ${correctBinary} to decimal and enter the decimal value:`));
-
-        // Check if the guess is correct
-        if (userDecimalGuess === correctDecimal) {
-            alert('Congratulations! You guessed the correct decimal value.');
-        } else {
-            alert(`Sorry, the correct decimal value was ${correctDecimal}. Try again!`);
-        }m
-
-    }   
-       // Display the binary version on the screen after the page has loaded
+    // Display the binary version on the screen after the page has loaded
     document.getElementById('binaryDisplay').textContent = `Binary: ${correctBinary}`;
 
     // Function to check the user's input
@@ -152,11 +175,5 @@ hide: true
     }
 </script>
 
-<h1>Binary Number Guessing Game</h1>
-<p>Convert the following binary number to decimal and enter the decimal value:</p>
-
-<!-- Button to trigger the guessing function -->
-<button onclick="checkGuess()">Guess Now</button>
-
 </body>
-</html>
+</html
