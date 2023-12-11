@@ -120,7 +120,15 @@ hide: true
         }m
 
     }   
-         // Check if the guess is correct
+       // Display the binary version on the screen after the page has loaded
+    document.getElementById('binaryDisplay').textContent = `Binary: ${correctBinary}`;
+
+    // Function to check the user's input
+    function checkGuess() {
+        // Get the user's input
+        const userDecimalGuess = parseInt(document.getElementById('userGuess').value);
+
+        // Check if the guess is correct
         const resultElement = document.getElementById('result');
         if (userDecimalGuess === correctDecimal) {
             resultElement.textContent = 'Congratulations! You guessed the correct decimal value.';
@@ -129,7 +137,7 @@ hide: true
         }
 
         // Update the distance bars
-        updateDistanceBar(userDecimalGuess); {
+        updateDistanceBar(userDecimalGuess);
     }
 
     // Function to update the distance bars
