@@ -120,8 +120,17 @@ hide: true
         }m
 
     }   
-     // Update the distance bars
-        updateDistanceBar(userDecimalGuess);
+         // Check if the guess is correct
+        const resultElement = document.getElementById('result');
+        if (userDecimalGuess === correctDecimal) {
+            resultElement.textContent = 'Congratulations! You guessed the correct decimal value.';
+        } else {
+            resultElement.textContent = `Sorry, the correct decimal value was ${correctDecimal}. Try again!`;
+        }
+
+        // Update the distance bars
+        updateDistanceBar(userDecimalGuess); {
+    }
 
     // Function to update the distance bars
     function updateDistanceBar(userDecimalGuess) {
