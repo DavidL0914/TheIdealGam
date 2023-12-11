@@ -181,10 +181,10 @@ function playRandomGame() {
     O has an ASCII value of 79, which in binary is 01001111.
 </p>
 <!-- Button to trigger the guessing function -->
-
-<button onclick="playBinaryToAsciiGuessingGame()">Word to Ascii</button>
-<button onclick="playBinaryWordGuessingGame()">Binary to Ascii</button>
 <button onclick="playWordToAsciiGuessingGame()">Word to Ascii</button>
+<button onclick="playBinaryToAsciiGuessingGame()">Binary to Ascii</button>
+<button onclick="playBinaryWordGuessingGame()">Binary to Word</button>
+
 <button onclick="playRandomGame()">CHALLENGE</button>
 
 
