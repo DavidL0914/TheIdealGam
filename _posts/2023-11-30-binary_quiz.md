@@ -120,33 +120,28 @@
 </div>
 
 <script>
-    // Function to convert decimal to binary with leading zeroes
+   <script>
+    // Generate a random decimal number between 0 and 255
+      
+       // Function to convert decimal to binary with leading zeroes
     function decimalToBinary(decimal) {
-        // Use toString(2) to convert to binary and padStart to add leading zeroes
-        return decimal.toString(2).padStart(8, '0');
     }
 
-    // Generate a random decimal number between 0 and 255
-    const correctDecimal = Math.floor(Math.random() * 256);
+     // Convert the decimal number to binary
 
-    // Convert the decimal number to binary
-    const correctBinary = decimalToBinary(correctDecimal);
-
-    // Display the binary version on the screen after the page has loaded
-    document.getElementById('binaryDisplay').textContent = `Binary: ${correctBinary}`;
-
-    // Function to check the user's input
+     // Function to check the user's input
     function checkGuess() {
         // Get the user's input
-        const userDecimalGuess = parseInt(document.getElementById('userGuess').value);
+        const correctDecimal = Math.floor(Math.random() * 256);
+        const correctBinary = decimalToBinary(correctDecimal);
+        const userDecimalGuess = parseInt(prompt(`Convert ${correctBinary} to decimal and enter the decimal value:`));
 
         // Check if the guess is correct
-        const resultElement = document.getElementById('result');
         if (userDecimalGuess === correctDecimal) {
-            resultElement.textContent = 'Congratulations! You guessed the correct decimal value.';
+            alert('Congratulations! You guessed the correct decimal value.');
         } else {
-            resultElement.textContent = `Sorry, the correct decimal value was ${correctDecimal}. Try again!`;
-        }
+            alert(`Sorry, the correct decimal value was ${correctDecimal}. Try again!`);
+            }m
 
         // Update the distance bars
         updateDistanceBar(userDecimalGuess);
