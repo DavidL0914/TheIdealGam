@@ -109,6 +109,20 @@ hide: true
 <!-- Display the result on the page -->
 <div id="result"></div>
 
+<!-- Message popup for correct/incorrect answers -->
+  <div id="message-popup" class="hidden"></div>
+
+  <button id="instructions-button" onclick="showInstructions()">Instructions</button>
+  <!-- Instructions Modal -->
+  <div id="instructions-modal">
+      <div id="instructions-content">
+          <h2>Instructions for this 2 Player Game:</h2>
+          <p>Goal: Be the first player to move forward 10 spaces and cross the finish line. <br><br> Getting Started: Click the "Start Game" button to initiate the game, then select the car you want. Start Game when you're ready. <br><br> How to play: A target decimal number will be randomly generated for each turn. Convert this number to the appropriate binary number and submit your answer. If your binary guess is correct, your car moves forward by one space. If your guess is incorrect, you lose your turn and your opponent gets a chance to get the right answer.</p>
+
+  <button id="close-button" onclick="closeInstructions()">Close</button>
+        </div>
+  </div>
+
 <!-- Display the decimal range -->
 <div id="decimalRange">
     <span>0</span>
@@ -125,20 +139,6 @@ hide: true
     <div class="distanceFill" id="guessedDistanceFill"></div>
     <span class="distanceText">Guessed Value</span>
 </div>
-
-<!-- Message popup for correct/incorrect answers -->
-  <div id="message-popup" class="hidden"></div>
-
-  <button id="instructions-button" onclick="showInstructions()">Instructions</button>
-  <!-- Instructions Modal -->
-  <div id="instructions-modal">
-      <div id="instructions-content">
-          <h2>Instructions for this 2 Player Game:</h2>
-          <p>Goal: Be the first player to move forward 10 spaces and cross the finish line. <br><br> Getting Started: Click the "Start Game" button to initiate the game, then select the car you want. Start Game when you're ready. <br><br> How to play: A target decimal number will be randomly generated for each turn. Convert this number to the appropriate binary number and submit your answer. If your binary guess is correct, your car moves forward by one space. If your guess is incorrect, you lose your turn and your opponent gets a chance to get the right answer.</p>
-
-  <button id="close-button" onclick="closeInstructions()">Close</button>
-        </div>
-  </div>
 
 <script>
     function reload() {
