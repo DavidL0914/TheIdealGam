@@ -90,6 +90,7 @@
 
 <h1>Binary Number Guessing Game</h1>
 <p>Convert the following binary number to decimal and enter the decimal value:</p>
+<p><strong>${correctBinary}</strong> (in binary) is: <strong>${correctDecimal}</strong> (in decimal)</p>
 
 <!-- Display the binary version on the screen -->
 <div id="binaryDisplay"></div>
