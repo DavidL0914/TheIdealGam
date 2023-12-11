@@ -122,6 +122,7 @@
 <script>
    <script>
     // Generate a random decimal number between 0 and 255
+     const correctDecimal = Math.floor(Math.random() * 256);
       
        // Function to convert decimal to binary with leading zeroes
     function decimalToBinary(decimal) {
