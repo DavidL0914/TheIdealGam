@@ -187,6 +187,11 @@ hide: true
         document.getElementById('guessedDistanceFill').style.width = `${guessedDistancePercentage}%`;
     }
 
+    // Function to show the instructions modal
+    function showInstructions() {
+        document.getElementById('instructions-modal').style.display = 'flex';
+    }
+
     // Function to close the instructions modal
     function closeInstructions() {
         document.getElementById('instructions-modal').style.display = 'none';
