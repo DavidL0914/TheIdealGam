@@ -186,6 +186,11 @@ hide: true
         document.getElementById('actualDistanceFill').style.width = `${actualDistancePercentage}%`;
         document.getElementById('guessedDistanceFill').style.width = `${guessedDistancePercentage}%`;
     }
+
+    // Function to close the instructions modal
+    function closeInstructions() {
+        document.getElementById('instructions-modal').style.display = 'none';
+    }
 </script>
 
 </body>
