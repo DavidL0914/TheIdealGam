@@ -1,7 +1,7 @@
 ---
 toc: false
 layout: post
-title: Binary Quiz
+title: Binary Number Guessing Game
 courses: { compsci: {week: 14 } } 
 type: tangibles
 hide: true
