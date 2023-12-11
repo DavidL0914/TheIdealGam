@@ -1,9 +1,4 @@
-toc: false
-layout: post
-title: Binary Quiz
-courses: { compsci: {week: 14 } }
-type: tangibles
-hide: true
+
 ---
 <html lang="en">
 <head>
