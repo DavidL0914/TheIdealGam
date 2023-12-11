@@ -116,8 +116,8 @@ hide: true
   <!-- Instructions Modal -->
   <div id="instructions-modal">
       <div id="instructions-content">
-          <h2>Instructions for this 2 Player Game:</h2>
-          <p>Goal: Be the first player to move forward 10 spaces and cross the finish line. <br><br> Getting Started: Click the "Start Game" button to initiate the game, then select the car you want. Start Game when you're ready. <br><br> How to play: A target decimal number will be randomly generated for each turn. Convert this number to the appropriate binary number and submit your answer. If your binary guess is correct, your car moves forward by one space. If your guess is incorrect, you lose your turn and your opponent gets a chance to get the right answer.</p>
+          <h2>Instructions for this guessing game:</h2>
+          <p>Goal: Guess the binary number to decimal and enter the decimal value <br><br> How to play: Click on text box to guess number. Once you have guessed press guess now. If you would like to guess new number press try again.</p>
 
   <button id="close-button" onclick="closeInstructions()">Close</button>
         </div>
