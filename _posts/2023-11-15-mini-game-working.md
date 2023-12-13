@@ -207,7 +207,7 @@ function playGame() {
 
 <!-- Button to trigger the guessing function -->
 <button onclick="WordToAscii()">Word to Ascii</button>
-<button onclick="playBinaryToAscii()">Binary to Ascii</button>
+<button onclick="playBinaryToAscii()">Ascii to Binary</button>
 <button onclick="WordToBinary()">Binary to Word</button>
 <button onclick="playGame()">Start ASCII Binary Guessing Game</button>
 <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Flinuxhint.com%2Fwp-content%2Fuploads%2F2022%2F02%2Fword-image-536.png&f=1&nofb=1&ipt=deb50b410b804e66a199ffb703b6a6ba87940452a40c6c598ca402f2ff2dce1c&ipo=images" alt=" Ascii Image">
