@@ -136,10 +136,6 @@ function playWordToAsciiGuessingGame() {
         }
     }
 
-    function getRandomWord() {
-        var words = ["apple", "banana", "orange", "python", "coding", "gpt", "programming"];
-        return words[Math.floor(Math.random() * words.length)];
-    }
 
     function convertWordToBinary(word) {
         var binaryValues = [];
