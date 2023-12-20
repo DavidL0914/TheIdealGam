@@ -95,7 +95,7 @@ Liquid for loop includes last number, thus the Minus
             document.getElementById("result").innerHTML = "Congratulations! You've successfully completed the game!";
             changes = 0;
             transformationListElement.innerHTML = ""
-            await new Promise(r => setTimeout(r, 1500));
+            await new Promise(r => setTimeout(r, 1500));*
             document.getElementById("result").innerHTML = " "
             transformationList = [];
             displayResults();
