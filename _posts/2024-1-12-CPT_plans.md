@@ -30,9 +30,19 @@ Sample Calendar Design
 ![OverallSite](https://files.catbox.moe/kte5ah.png)
 ![CalendarUIDesign](https://files.catbox.moe/byxjak.png)
 
+<br>
+
+### Kayden:
+
+<br>
+
+### Andrew:
+
+<br>
+
 ### Time Plan:
-* Finish plans by Tuesday (1/16)
+* Finish plans/UI design by Tuesday (1/16)
 * 
 
 ### Changelog:
-* 1/12: Edited CPT plans; Added UI designs for user profile, calendar, and login/signup system
+* 1/12: Edited CPT plans; Added UI designs for user profile and calendar
