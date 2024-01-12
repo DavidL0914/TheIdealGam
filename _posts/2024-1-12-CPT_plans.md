@@ -30,3 +30,8 @@ Sample Calendar Design
 ![CalendarUIDesign]()
 
 ### Time Plan:
+* Finish plans by Tuesday (1/16)
+* 
+
+### Changelog:
+* 1/12: Edited CPT plans; Added UI designs for user profile, calendar, and login/signup system
