@@ -12,10 +12,11 @@ comments: true
 ####  Team Review Ticket Link: 
 
 ### Team Member	Plans/Features:
-* Andrew: Chat system
-* David: User profile system / Matching skills and time
-* Kayden: Calendar system
-* Matthew: Login/Signup system
+* Andrew: API; matching skills
+* David: Blogging event; profile system
+* Kayden: Login/Signup
+* Matthew: Calendar system; Adding and sharing events
+* Ameer: Time tracker; See previous time data
 
 <br>
 
@@ -39,6 +40,10 @@ Sample Calendar Design
 ### Andrew:
 
 ![CHAT](Screenshot 2024-01-12 at 10.46.30 AM.png)
+<br>
+
+### Ameer:
+
 <br>
 
 ### Time Plan:
