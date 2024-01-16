@@ -38,6 +38,7 @@ Sample Calendar Design
 
 ### Andrew:
 
+![CHAT](Screenshot 2024-01-12 at 10.46.30 AM.png)
 <br>
 
 ### Time Plan:
