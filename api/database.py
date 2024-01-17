@@ -4,15 +4,14 @@ from flask_restful import Resource, Api
 from werkzeug.security import generate_password_hash, check_password_hash
 import os
 from model.logins import *
-# Get the absolute path to the 'instance' directory
 
-# Specify the absolute path to the database file
+# specify the  path to the database file
 db_file_path = 'example.db'
 print(db_file_path)
-# Connect to the database using the     absolute path
+# connect to the db
 login_api = Blueprint("login_api", __name__, url_prefix="/api/login")
 api = Api(login_api)
-# ...
+
 conn = sqlite3.connect(db_file_path, check_same_thread=False)
 cursor = conn.cursor()
 class UserDeletion(Resource):
@@ -71,18 +70,16 @@ class UserLogin(Resource):
         cursor.execute('SELECT * FROM users WHERE username = ?', (username,))
         user = cursor.fetchone()
         conn.close()
-        # If there is no user, returns an error
+        # If no user, returns an error
         if not user:
             return make_response(jsonify(error='User not found'), 400)
-        # If the password isn't correct, returns an error
+        # If password isn't correct, returns an error
         if not check_password_hash(user[2], password):
             return make_response(jsonify(error='Invalid password'), 409)
-        # If the password is right, allow the user in with status code 200
+        # If the password is right, let user in
         return make_response(jsonify(message='Login successful'), 200)
 
-# ...
-
-# Add user-related resources to the blueprint
+# Add resource to blueprint
 api.add_resource(UserRegistration.Visualize, '/vis')
 api.add_resource(UserRegistration, '/register')
 api.add_resource(UserLogin, '/login')
