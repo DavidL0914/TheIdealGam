@@ -21,7 +21,7 @@ def visualize_users_data():
     # get all data
     cursor.execute('SELECT * FROM users')
     users_data = cursor.fetchall()
-    print(users_data)
+    #print(users_data)
     # process data
     result = []
     for user in users_data:
